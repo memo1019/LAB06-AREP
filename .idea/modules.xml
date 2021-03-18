@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/DemoSecurityLogin/DemoSecurityLogin.iml" filepath="$PROJECT_DIR$/DemoSecurityLogin/DemoSecurityLogin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/DemoSecurityService/DemoSecurityService.iml" filepath="$PROJECT_DIR$/DemoSecurityService/DemoSecurityService.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/LAB06-AREP.iml" filepath="$PROJECT_DIR$/.idea/LAB06-AREP.iml" />
+    </modules>
+  </component>
+</project>
