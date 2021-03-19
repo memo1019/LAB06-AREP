@@ -88,7 +88,7 @@ public class loginSpark {
             return "";
         });
 
-        get("/protected/service",(request, response) -> SecureURLReader.readURL("https://ec2-54-160-88-236.compute-1.amazonaws.com:9001/helloSecureService"));
+        get("/protected/service",(request, response) -> SecureURLReader.readURL("https://ec2-54-146-83-148.compute-1.amazonaws.com:9001/helloSecureService"));
 
     }
 

@@ -50,39 +50,40 @@ Finalmente coonstruiremos y compilaremos el proyecto para asi poder ejecutarlo.
 ```
 ## Pruebas
 
-***Web-App corriendo localmente con la arquitectura descrita***
-
-![Diagrama de Clases](/imagenes/prueba1.png)
-
-***instancia ejecutada***
-
-
-![Diagrama de Clases](/imagenes/prueba5.png)
-
-***Grupo de seguridad***
-
-
-![Diagrama de Clases](/imagenes/prueba3.png)
 
 ***Web-App corriendo en AWS con la arquitectura descrita***
 
 
-![Diagrama de Clases](/imagenes/prueba2.png)
+![Diagrama de Clases](img/prueba3.png)
+
+![Diagrama de Clases](img/prueba4.png)
+
+![Diagrama de Clases](img/prueba7.png)
+
+***llamado seguro de la aplicacion de prueba***
+
+![Diagrama de Clases](img/prueba8.png)
+
+***Grupo de seguridad***
+
+
+![Diagrama de Clases](img/prueba2.png)
+
 
 ***imagenes del docker y contenedores de la instancia de EC2 corriendo con ssh***
 
 
-![Diagrama de Clases](/imagenes/prueba4.png)
+![Diagrama de Clases](img/prueba6.png)
 
 ## Diseño
 
-![Diagrama de Clases](img/arquitectura.png)
+![arquitectura](img/arquitectura.png)
 ### Diagrama de clases
-#### Load Balancer
-![Diagrama de Clases](/imagenes/prueba7.png)
+#### DemoSecurityLogin
+![Diagrama de Clases](img/diagrama2.png)
 
-#### Rest Server
-![Diagrama de Clases](/imagenes/prueba6.png)
+#### DemoSecurityService
+![Diagrama de Clases](img/diagrama1.png)
 ## Documentacion
 para realizar la documentacion de javadoc use estos comandos y aqui podra llevar acabo el proceso de creacion de esta documentacion.
 ```
@@ -112,9 +113,9 @@ Podemos ver la descripcion del proyecto en este pdf [file](/lab6.pdf) mostrando 
 * Java 1.8.0_211
 * Git 2.26.2
 * AWS (EC2)
-   ### Video del despliegue en AWS
    
-   [![Deployed to AWS](./img/aws.png)](https://www.youtube.com/watch?v=Q9Yq7MxHnko)
+   ### Video del appweb en AWS funcionando
+   [![Deployed to AWS](./img/aws.png)](https://www.youtube.com/watch?v=lPMYS7H4QqQ)
    
    
   ## Comandos a Usar
