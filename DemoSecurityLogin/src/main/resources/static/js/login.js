@@ -1,11 +1,10 @@
-var api = (function () {
-    var url="https://localhost:4567";
+var login = (function () {
 
     function login(){
         let uname = document.getElementById("username").value;
         let passwd = document.getElementById("passwd").value;
         let user = {username : uname, password:passwd};
-        axios.post(url+"/login",user).then(res=>{
+        axios.post("/login",user).then(res=>{
             if(res.data!==""){
                 alert("Invalid username or password");
             }
@@ -16,7 +15,7 @@ var api = (function () {
     }
 
     function logout(){
-        axios.get(url+"/logout").then(res=>{
+        axios.get("/logout").then(res=>{
             alert("You have closed your session");
             window.location.href = "/index.html" ;
         })

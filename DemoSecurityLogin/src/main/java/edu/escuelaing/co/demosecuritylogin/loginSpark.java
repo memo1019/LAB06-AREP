@@ -1,13 +1,14 @@
 package edu.escuelaing.co.demosecuritylogin;
 
 import com.google.gson.Gson;
+import edu.escuelaing.co.demosecuritylogin.SecureURLReader;
 import edu.escuelaing.co.demosecuritylogin.model.User;
 import spark.Request;
 import spark.Response;
 import spark.staticfiles.StaticFilesConfiguration;
 
 
-import static edu.escuelaing.co.demosecuritylogin.hashservice.convertPass;
+import static edu.escuelaing.co.demosecuritylogin.hashservice.*;
 import static spark.Spark.*;
 
 import java.io.IOException;
@@ -49,7 +50,7 @@ public class loginSpark {
             }
             boolean isLogged = req.session().attribute("isLogged");
             if (isLogged) {
-                response.redirect("protected/index.html");
+                response.redirect("protected/login.html");
             }
         }));
 
@@ -70,6 +71,7 @@ public class loginSpark {
         }));
 
         get("/logout",((request, response) -> {
+            System.out.println("hola amigos ");
             request.session().attribute("isLogged",false);
             return "";
         }));
@@ -86,7 +88,7 @@ public class loginSpark {
             return "";
         });
 
-//        get("/protected/service",(request, response) -> SecureURLReader.readURL("https://ec2-54-242-161-34.compute-1.amazonaws.com:9002/hello"));
+        get("/protected/service",(request, response) -> SecureURLReader.readURL("https://ec2-54-160-88-236.compute-1.amazonaws.com:9001/helloSecureService"));
 
     }
 

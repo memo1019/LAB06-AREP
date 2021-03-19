@@ -1,53 +1,53 @@
-# AREP LABORATORIO 5 - TALLER DE MODULARIZACIÓN CON VIRTUALIZACIÓN E INTRODUCCIÓN A DOCKER Y A AWS
+# AREP LABORATORIO 6 - APLICACIÓN DISTRIBUIDA SEGURA EN TODOS SUS FRENTES
 
-Este taller consiste en crear una arquitectura que contenga un balanceador de carga, 3 nodos que manejen peticiones REST y un nodo que contenga una base de datos mongo. Cada nodo representa un contenedor en Docker.
-
+Aplicativo Web diseñado en Java haciendo uso del framework Spark con el objetivo de realizar la implementación y uso de certificados SSL y el uso del protocolo HTTPS, con una arquitectura basada en 2 nodos que se comunicaran entre sí haciendo uso de estos certificados (SSL), uno de ellos encargado de prestar un servicio el cual en este caso es una calculadora encargada de retornar la media y la desviación estándar de un conjunto n de datos, y el segundo nodo encargado de enviar al primero la cadena de datos con la cual este va a trabajar y de brindar adicionalmente un soporte a usuarios, los cuales serán capaces de hacer login y hacer logout, este nodo además será el encargado de llevar un control sobre las sesiones de estos usuarios y de encriptar las contraseñas de los mismos.
 
 ### PREREQUISITOS
 
 Los prerrequisitos que manejaremos para lograr con exito el desarrollo del laboratorio son:
 - Maven
 - Git
-- MongoDB
 - Aws
 - Docker
-- Docker-Compose
 ## DOCKER IMAGES
 
  vemos las imagenes en las siguientes webs:
 
-- Web:
-    https://hub.docker.com/repository/docker/memo1019/labarep05
-- Balancer:
-    https://hub.docker.com/repository/docker/memo1019/webdocker
+- DemoSecurityLogin:
+    https://hub.docker.com/repository/docker/memo1019/SecurityLogin
+- DemoSecurityService:
+    https://hub.docker.com/repository/docker/memo1019/SecurityService
 
 
 ### Ejecucion e instalacion
 se debe clonar el proyecto con el siguiente comando:
 
 ```
-git clone https://github.com/memo1019/LAB04-AREP
+git clone https://github.com/memo1019/LAB06-AREP
 ```
 luego ingresaremos a la carpeta dede el cmd o la consola:
 ```
-cd /Lab05-AREP
+cd /Lab06-AREP
 ```
 Finalmente coonstruiremos y compilaremos el proyecto para asi poder ejecutarlo.
 ```
- docker pull memo1019/arep5balancer:latest
- docker pull memo1019/arep5web:latest
+ docker pull memo1019/SecurityService:latest
+ docker pull memo1019/SecurityLogin:latest
 ```
 
-Si desea ejecutar los contenedores directamente desde las imágenes de DockerHub, ejecute el siguiente comando:
+**corre el proyecto con Docker**
+  
+```sh
+  $ docker run -dp <localport>:8000 memo1019/SecurityService
+  $ docker run -dp <localport>:8000 memo1019/SecurityLogin
 ```
-docker-compose up -d --scale web=3
+
+**prueba tus apps**
+
+```sh
+  $ docker ps
+  $ docker logs <dockerID/dockername>
 ```
-Si estás trabajando en una máquina Linux o Mac, [instala docker-compose](https://docs.docker.com/compose/install/).
-En windows, docker-compose ya está en docker desktop.
-
-entonces ve a localhost:8087 para acceder directamente al contenedor del Load Balancer.
-Si quieres acceder a los contenedores web, puedes ir a localhost:8088,localhost:8089 y localhost:8090, pero en AWS EC2 el puerto 8087 era el único oppened para el tráfico.la aplicación seguirá esta arquitectura en AWS(Para más información sobre cómo funcionaba en AWS plese visitar el archivo de documentación):
-
 ## Pruebas
 
 ***Web-App corriendo localmente con la arquitectura descrita***
@@ -76,7 +76,7 @@ Si quieres acceder a los contenedores web, puedes ir a localhost:8088,localhost:
 
 ## Diseño
 
-![Diagrama de Clases](/imagenes/prueba8.png)
+![Diagrama de Clases](img/arquitectura.png)
 ### Diagrama de clases
 #### Load Balancer
 ![Diagrama de Clases](/imagenes/prueba7.png)
@@ -100,7 +100,7 @@ si desea ver el javadoc se encuentra en el directorio
 /target/site
 ```
 
-Podemos ver la descripcion del proyecto en este pdf [file](/lab4.pdf) mostrando el diseño y la estructura del proyecto
+Podemos ver la descripcion del proyecto en este pdf [file](/lab6.pdf) mostrando el diseño y la estructura del proyecto
 
 ## Construido con
 
@@ -112,8 +112,13 @@ Podemos ver la descripcion del proyecto en este pdf [file](/lab4.pdf) mostrando 
 * Java 1.8.0_211
 * Git 2.26.2
 * AWS (EC2)
+   ### Video del despliegue en AWS
+   
+   [![Deployed to AWS](./img/aws.png)](https://www.youtube.com/watch?v=Q9Yq7MxHnko)
+   
    
   ## Comandos a Usar
+  
   
   ***Listar todos los contenedores***
   

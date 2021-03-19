@@ -1,0 +1,4 @@
+edu\escuelaing\co\demosecuritylogin\model\User.class
+edu\escuelaing\co\demosecuritylogin\loginSpark.class
+edu\escuelaing\co\demosecuritylogin\hashservice.class
+edu\escuelaing\co\demosecuritylogin\SecureURLReader.class
